@@ -1,0 +1,9 @@
+[
+  { "id": 1, "name": "Rahul", "grade": "A", "section": "1" },
+  { "id": 2, "name": "Priya", "grade": "B", "section": "2" },
+  { "id": 3, "name": "Arjun", "grade": "A+", "section": "1" },
+  { "id": 4, "name": "Neha", "grade": "A", "section": "3" },
+  { "id": 5, "name": "Karan", "grade": "B+", "section": "2" },
+  { "id": 6, "name": "Ananya", "grade": "A", "section": "1" },
+  { "id": 7, "name": "Rohan", "grade": "C", "section": "3" }
+]
