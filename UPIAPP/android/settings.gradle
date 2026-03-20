@@ -1,0 +1,34 @@
+pluginManagement {
+    includeBuild("../node_modules/@react-native/gradle-plugin")
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id("com.facebook.react.settings")
+}
+
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
+    ex.autolinkLibrariesFromCommand()
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+        maven {
+            url = uri("../node_modules/@react-native-async-storage/async-storage/android/local_repo")
+        }
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+
+rootProject.name = "UPIAPP"
+
+include(":app")
+includeBuild("../node_modules/@react-native/gradle-plugin")
