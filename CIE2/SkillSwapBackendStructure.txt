@@ -1,0 +1,14 @@
+App opens
+  └── AuthContext checks AsyncStorage
+        ├── Token found → Main App (Home tabs)
+        └── No token   → Login / Register
+
+Login/Register → POST /api/auth/* → JWT saved → Home
+
+HomeScreen opens → GET /api/skills → MongoDB
+                 → fallback to dummyData if offline
+
+AddSkill → POST /api/skills → saved to MongoDB
+
+UserProfile → reads from AuthContext (name, email, initials)
+           → Logout clears token → back to Login

@@ -1,0 +1,67 @@
+SkillSwap/
+│
+├── 📱 FRONTEND (React Native)
+│
+├── App.tsx                          # Entry point — wraps all providers
+│
+├── context/
+│   ├── AuthContext.tsx              # JWT auth state (login/logout/token)
+│   ├── ThemeContext.tsx             # Dark/light mode toggle
+│   ├── BookmarksContext.tsx         # Saved skills
+│   └── NotificationsContext.tsx     # Unread badge state
+│
+├── navigation/
+│   └── StackNavigator.tsx          # Root nav + bottom tab bar
+│                                    # Tabs: Home | Search | Messages | Profile
+│                                    # Stack: Profile detail, AddSkill, Chat
+│
+├── screens/
+│   ├── LoginScreen.tsx              # Auth — login
+│   ├── RegisterScreen.tsx           # Auth — register
+│   ├── HomeScreen.tsx               # Skills feed (filter/sort/search)
+│   ├── SearchScreen.tsx             # Full-screen live search
+│   ├── MessagesScreen.tsx           # Conversations list
+│   ├── ProfileScreen.tsx            # Skill detail + portfolio
+│   ├── AddSkillScreen.tsx           # Post a new skill
+│   ├── ChatScreen.tsx               # In-app chat
+│   └── UserProfileScreen.tsx        # My account + settings + logout
+│
+├── components/
+│   ├── SkillCard.tsx                # Glass skill listing card
+│   └── MessageBubble.tsx            # Chat bubble
+│
+├── utils/
+│   ├── api.ts                       # All backend API calls
+│   │                                #   getSkills(), createSkill()
+│   │                                #   login(), register()
+│   └── haptics.ts                   # Haptic feedback helpers
+│
+├── data/
+│   └── dummyData.ts                 # Fallback mock skills + messages
+│
+├── types/
+│   └── index.ts                     # TypeScript types (Skill, Message, nav params)
+│
+├── styles/
+│   └── globalStyles.ts              # Color palette + base styles (dark glass theme)
+│
+│
+└── 🖥️  BACKEND (Node.js + Express + MongoDB)
+│
+└── backend/
+    ├── .env                         # PORT, MONGODB_URI, JWT_SECRET
+    ├── server.js                    # Express app entry point
+    │
+    ├── config/
+    │   └── db.js                    # Mongoose connection
+    │
+    ├── models/
+    │   ├── User.js                  # User schema (name, email, password)
+    │   └── Skill.js                 # Skill schema (name, skill, price, type…)
+    │
+    ├── routes/
+    │   ├── auth.js                  # POST /api/auth/register & /login
+    │   └── skills.js                # GET /api/skills, POST /api/skills
+    │
+    └── middleware/
+        └── auth.js                  # JWT Bearer token verification
